@@ -1,5 +1,9 @@
 package br.edu.ifsul.clienteandroid6.service;
 
+import android.util.Log;
+
+import java.lang.reflect.GenericArrayType;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -20,7 +24,7 @@ public class RetrofitSetup {
         OkHttpClient.Builder client = new OkHttpClient.Builder();
         client.addInterceptor(interceptor);
 
-        retrofit = new Retrofit.Builder().baseUrl("http://192.168.15.10/webservice/").addConverterFactory(GsonConverterFactory.create()).client(client.build()).build();
+        retrofit = new Retrofit.Builder().baseUrl("http://192.168.15.11/webservice/").addConverterFactory(GsonConverterFactory.create()).client(client.build()).build();
     }
     public ProjetoService getProjetoService()
     {

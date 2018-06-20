@@ -2,6 +2,7 @@ package br.edu.ifsul.clienteandroid6.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,8 @@ public class ProjetoAdapter extends RecyclerView.Adapter<ProjetoAdapter.ProjetoV
     public void onBindViewHolder(ProjetoAdapter.ProjetoViewHolder holder, int position)
     {
         Projeto projeto = this.projetos.get(position);
+
+        Log.d("PROJETO", "nome: " + projeto.getNome());
 
         holder.tvNome.setText(projeto.getNome());
         holder.imgView.setImageResource(R.mipmap.ic_launcher);

@@ -54,16 +54,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ProjetoSync> call, Response<ProjetoSync> response)
             {
-                Log.d("PROJECTSBOX", "HELLO");
                 ProjetoSync projetoSync = response.body();
-                Log.d("TAG", "" + projetoSync.getProjetos());
                 recyclerView.setAdapter(new ProjetoAdapter(MainActivity.this, projetoSync.getProjetos()));
             }
 
             @Override
             public void onFailure(Call<ProjetoSync> call, Throwable t)
             {
-
+                Log.d("ERROR", t.getMessage());
             }
         });
     }
